@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A small open-source nested folder organizer">
+  <title>FolderLab — Simple folder organization</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="topbar">
+    <div class="brand"><span class="mark" aria-hidden="true">▣</span> FolderLab</div>
+    <a href="https://github.com/elisAITech/Opgit" target="_blank" rel="noopener noreferrer">Contribute on GitHub</a>
+  </header>
+  <main id="main" class="layout">
+    <section class="intro">
+      <p class="eyebrow">YOUR LOCAL WORKSPACE</p>
+      <h1>Organize ideas, one folder at a time.</h1>
+      <p>Create and manage a folder tree without setting up an account. Your workspace stays in this browser.</p>
+    </section>
+    <div class="columns">
+      <section class="panel" aria-labelledby="folders-title">
+        <div class="panel-head">
+          <h2 id="folders-title">Folders</h2>
+          <span id="folder-count" class="muted"></span>
+        </div>
+        <label for="search">Search folders</label>
+        <input id="search" type="search" placeholder="Find by name…" autocomplete="off">
+        <ul id="folder-tree" class="folder-tree" aria-label="Folders"></ul>
+      </section>
+      <section class="panel" aria-labelledby="details-title">
+        <h2 id="details-title">Folder details</h2>
+        <p class="muted">Selected folder</p>
+        <p id="selected-path" class="path"></p>
+        <form id="create-form">
+          <h3>Create a child folder</h3>
+          <label for="folder-name">Folder name</label>
+          <input id="folder-name" required maxlength="60" placeholder="e.g. Meeting notes">
+          <button class="primary" type="submit">Create folder</button>
+        </form>
+        <section class="group" aria-labelledby="rename-title">
+          <h3 id="rename-title">Rename selected folder</h3>
+          <label for="rename-name">New name</label>
+          <input id="rename-name" maxlength="60">
+          <button id="rename-button" type="button">Rename folder</button>
+        </section>
+        <section class="group" aria-labelledby="delete-title">
+          <h3 id="delete-title">Remove a folder</h3>
+          <p class="muted">Deleting a folder also deletes all its children.</p>
+          <button id="delete-button" class="danger" type="button">Delete selected folder</button>
+        </section>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+    <p class="footer-note">An open-source learning project. Find an issue and make your first contribution.</p>
+  </main>
+</body>
+</html>
