@@ -63,7 +63,7 @@ function render() {
   tree.replaceChildren();
   let displayed = 0;
 
-  if (search.value) {
+  if (search.value.trim()) {
     for (const folder of searchFolders(folders, search.value)) {
       const item = makeItem(folder);
       item.title = folderPath(folders, folder.id);

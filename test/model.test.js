@@ -32,6 +32,16 @@ test('search is case insensitive', () => {
   assert.deepEqual(searchFolders(starterFolders(), 'PROject').map((folder) => folder.id), ['projects']);
 });
 
+test('search ignores leading and trailing spaces', () => {
+  assert.deepEqual(searchFolders(starterFolders(), '  Projects  ').map((folder) => folder.id), ['projects']);
+});
+
+test('whitespace-only search behaves like an empty search', () => {
+  const folders = starterFolders();
+  assert.deepEqual(searchFolders(folders, '   '), folders);
+  assert.deepEqual(searchFolders(folders, ''), folders);
+});
+
 test('lists only immediate children', () => {
   assert.deepEqual(listChildren(starterFolders(), ROOT_ID).map((folder) => folder.id), ['projects', 'learning']);
 });

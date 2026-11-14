@@ -73,7 +73,8 @@ export function folderPath(folders, id) {
 }
 
 export function searchFolders(folders, query) {
-  if (typeof query !== 'string' || query.length === 0) return folders;
-  const needle = query.toLowerCase();
+  if (typeof query !== 'string') return folders;
+  const needle = query.trim().toLowerCase();
+  if (needle.length === 0) return folders;
   return folders.filter((folder) => folder.name.toLowerCase().includes(needle));
 }
