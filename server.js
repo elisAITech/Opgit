@@ -48,4 +48,4 @@ const server = http.createServer(async (request, response) => {
   }
 });
 
-server.listen(port, host, () => console.log('FolderLab running at http://' + host + ':' + port));
+server.listen(port, host, () => console.log('FolderLab running at http://' + host + ':' + server.address().port));
